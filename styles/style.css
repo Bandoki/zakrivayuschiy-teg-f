@@ -11,6 +11,274 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
+  max-inline-size: 700px;
   min-block-size: 100dvb;
+  font-family: var(--Inter), sans-serif;
+  font-variation-settings: var(--main-text-weight);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding-inline: var(--header-padding-inline);
+  padding-block: var(--header-padding-block);
+  margin: 102px 2px;
+  border: 2px solid #000;
+  gap: 20px;
+}
+
+.inline-size {
+  inline-size: var(--inline-size);
+}
+
+.main__title {
+  font-family: var(--PressStart2P);
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.main__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 52px;
+}
+
+.section__card {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card__title {
+  padding: 4px 10px 6px;
+  font-size: 18px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+  line-height: 21px;
+  font-size: 18px;
+  text-shadow: 1px 1px 5px #FF4500;
+}
+
+.img__wrapper {
+  position: relative;
+}
+
+.card__image {
+  object-fit: cover;
+  inline-size: var(--inline-size);
+  block-size: 375px;
+  object-position: center;
+}
+
+.card__image-ram {
+  filter: contrast(120%) grayscale(50%) saturate(130%);
+}
+
+.card__image-picture {
+  filter: saturate(150%) blur(1px) sepia(40%)
+}
+
+.card__image-boy {
+  filter: saturate(80%) hue-rotate(30deg);
+}
+
+.card__image-darts {
+  filter: grayscale(70%) saturate(80%) blur(3px);
+}
+
+.card__image-team {
+  filter: invert(20%) contrast(120%);
+}
+
+.card__image-geo {
+  filter: blur(3px);
+}
+
+.card__image-meditate {
+  filter: brightness(70%);
+}
+
+.card__label {
+  position: absolute;
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+  color: #000;
+  top: 25px;
+  right: 13px;
+  filter: opacity(50%);
+  text-shadow: 1px 0 var(--text-shadow), 
+  0 1px var(--text-shadow), 
+  -1px 0 var(--text-shadow), 
+  0 -1px var(--text-shadow);
+  mix-blend-mode: hard-light;
+}
+
+.card__like-area {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  padding: 0 25px 25px 0;
+}
+
+.card__icon-button {
+  display: flex;
+  align-self: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid #000;
+  transition: 0.3s ease;
+}
+
+.page_button-style {
+  font-family: var(--PressStart2P);
+  background: transparent;
+  border: none;
+  outline: 2px solid #000;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.page_button-style::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.page_button-style:hover::before {
+  background-color: #000;
+  transform: scaleX(1);
+}
+
+.page_button-style:focus {
+  box-shadow: 4px 4px 0 var(--main-text-color);
+  transition: 0.3s ease-in-out;
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.card__like-button {
+  padding: 12.5px 37px;
+  display: flex;
+  justify-content: center;
+  max-inline-size: 130px;
+  max-block-size: 38px;
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34.5px 100px;
+}
+
+.card__save-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.floppy__icon {
+  mix-blend-mode: difference;
+  inline-size: 29px;
+  block-size: 29px;
+}
+
+.dialog__popup[open] {
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ padding: 30px;
+ transition: 0.5s ease-in-out;
+ max-inline-size: 341px;
+}
+
+.dialog__popup .floppy__icon {
+  color: #fff;
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__text {
+  font-family: var(--PressStart2P);
+  text-transform: uppercase;
+  line-height: 150%;
+  font-size: 14px;
+}
+
+dialog::backdrop {
+  backdrop-filter: brightness(50%);
+}
+
+@media (width <= 375px) {
+  .header {
+    padding-inline: clamp(3.063rem, 1.429vw + 2.777rem, 4.063rem);
+    font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+  }
+}
+
+@media (width >= 768px) {
+  .card__save-button {
+    flex-direction: row;
+  }
+
+  .floppy__icon {
+    inline-size: 21px;
+    block-size: 21px;
+  }
+
+  .dialog__popup[open] {
+    max-inline-size: 353px;
+  }
 }
