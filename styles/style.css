@@ -144,7 +144,7 @@
 .card__like-area {
   display: flex;
   justify-content: end;
-  gap: 12px;
+  gap: 4px;
   padding: 0 25px 25px 0;
 }
 
