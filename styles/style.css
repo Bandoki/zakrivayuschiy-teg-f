@@ -282,3 +282,17 @@ dialog::backdrop {
     max-inline-size: 353px;
   }
 }
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: 'Inter-Variable', sans-serif;
+  }
+} 
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--text-shadow);
+    text-stroke: 1px var(--text-shadow);
+    text-shadow: none;
+  }
+} 
