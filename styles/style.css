@@ -176,7 +176,7 @@
   cursor: pointer;
   position: relative;
   color: #fff;
-  transition: 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .page_button-style::before {
@@ -231,7 +231,8 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  padding: 15px 20px;
+  line-height: 90%;
+  padding: 15px 17px;
   background-color: #fff;
 }
 
@@ -282,6 +283,10 @@ dialog::backdrop {
   .header {
     padding-inline: clamp(3.063rem, 1.429vw + 2.777rem, 4.063rem);
     font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+  }
+  
+  .page {
+    inline-size: 100%;
   }
 }
 
